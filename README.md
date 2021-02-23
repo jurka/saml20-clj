@@ -1,3 +1,5 @@
+#***This repository is not being maintained and will be archived soon™. Please see http://github.com/metabase/saml20-clj for a more secure and up-to-date version, or an alternative library like https://github.com/pac4j/pac4j.***
+
 # saml20-clj
 
 This is a SAML 2.0 clojure library for SSO. 
