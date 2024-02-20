@@ -1,7 +1,7 @@
 (ns user
-  (:require [saml20-clj.sp :as sp]
-            [saml20-clj.shared :as shared]
-            [saml20-clj.xml :as xml]
+  (:require [old-saml20-clj.sp :as sp]
+            [old-saml20-clj.shared :as shared]
+            [old-saml20-clj.xml :as xml]
             [web]
             [clojure.edn :as edn]
             [clojure.pprint :refer (pprint)]
@@ -35,6 +35,6 @@
   
   (reset-state! "config.edn")
   (start-ring!)
-  (stop-ring!)
+  (stop-ring!))
 
-  )
+

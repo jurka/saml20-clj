@@ -1,7 +1,7 @@
-(ns saml20-clj.xml
+(ns old-saml20-clj.xml
   (:require [hiccup.core]
             [hiccup.page]
-            [saml20-clj.shared :as saml-shared])
+            [old-saml20-clj.shared :as saml-shared])
   (:import [javax.xml.crypto KeySelector]
            [javax.xml.crypto.dsig XMLSignature XMLSignatureFactory]
            [javax.xml.crypto.dsig.dom DOMValidateContext]

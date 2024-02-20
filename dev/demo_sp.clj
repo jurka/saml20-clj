@@ -1,8 +1,8 @@
 (ns demo-sp
-  (:require [saml20-clj.sp :as sp]
-            [saml20-clj.shared :as shared]
-            [saml20-clj.xml :as xml]
-            [saml20-clj.routes :as sr]
+  (:require [old-saml20-clj.sp :as sp]
+            [old-saml20-clj.shared :as shared]
+            [old-saml20-clj.xml :as xml]
+            [old-saml20-clj.routes :as sr]
             [compojure.core :refer [defroutes routes GET POST]]
             [compojure.handler :as handler]
             [hiccup.page :refer [html5]]
@@ -26,7 +26,7 @@
 
 (defn debug-page [saml-info]
   (let [attrs (-> saml-info :assertions first :attrs)
-        status (dissoc saml-info :assertions) ]
+        status (dissoc saml-info :assertions)]
     (template-page "SAML Debug page"
                    [:h2 "SAML response"]
                    [:table.table.table-striped
@@ -35,7 +35,7 @@
                    [:h2 "You 've been authenticated as"]
                    [:table.table.table-striped
                     (map (fn [[k v]]
-                           [:tr [:td k] [:td v]]) attrs) ])))
+                           [:tr [:td k] [:td v]]) attrs)])))
 
 (defroutes main-routes
   (GET "/" {session :session}
@@ -67,4 +67,4 @@
        app (routes saml-routes
                    #'main-routes)]
    (println "Starting server at" base-uri)
-   (run-jetty (handler/site app) {:port port})) )
+   (run-jetty (handler/site app) {:port port})))

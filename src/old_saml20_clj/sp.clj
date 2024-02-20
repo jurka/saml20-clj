@@ -1,12 +1,12 @@
-(ns saml20-clj.sp
+(ns old-saml20-clj.sp
   (:require [clojure.data.xml :as xml]
             [clojure.xml :refer [parse]]
             [ring.util.response :refer [redirect]]
             [clj-time.core :as ctime]
             [clj-time.coerce :refer [to-timestamp]]
             [hiccup.core :as hiccup]
-            [saml20-clj.shared :as shared]
-            [saml20-clj.xml :as saml-xml]
+            [old-saml20-clj.shared :as shared]
+            [old-saml20-clj.xml :as saml-xml]
             [clojure.data.zip.xml :as zf])
   (:import [javax.xml.crypto.dsig XMLSignature XMLSignatureFactory]
            [org.apache.xml.security Init]
@@ -88,10 +88,10 @@
         :AssertionConsumerServiceURL acs-url}
        [:saml:Issuer
         {:xmlns:saml "urn:oasis:names:tc:SAML:2.0:assertion"}
-        saml-service-name]
+        saml-service-name]])))
        ;;[:samlp:NameIDPolicy {:AllowCreate false :Format saml-format}]
        
-       ])))
+
 
 (defn generate-mutables
   []
@@ -277,8 +277,8 @@
           (println "Signature NOT valid")
           (println (.getMessage ex))
           false)))
-    true ;; if not signature is present
-    ))
+    true)) ;; if not signature is present
+
 
 (defn parse-saml-resp-status
   "Parses and returns information about the status (i.e. successful or not), the version, addressing info etc. of the SAML response
@@ -311,4 +311,4 @@
                                 (.getEncryptedAssertions saml-resp))))
         props (map parse-saml-assertion assertions)]
     (assoc (parse-saml-resp-status saml-resp)
-           :assertions props )))
+           :assertions props)))

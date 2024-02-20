@@ -1,10 +1,10 @@
 (ns ^{:doc "The compojure based routes for the SAML Service Provider (SP)"
       :author "Stelios Sfakianakis"}
-  saml20-clj.routes
+  old-saml20-clj.routes
   (:require [compojure.core :as cc]
-            [saml20-clj.sp :as saml-sp]
-            [saml20-clj.xml :as saml-xml]
-            [saml20-clj.shared :as saml-shared]
+            [old-saml20-clj.sp :as saml-sp]
+            [old-saml20-clj.xml :as saml-xml]
+            [old-saml20-clj.shared :as saml-shared]
             [helmsman uri navigation])
   (:gen-class))
 

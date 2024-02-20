@@ -1,4 +1,4 @@
-(ns saml20-clj.shared
+(ns old-saml20-clj.shared
   (:import  (java.io FileInputStream InputStreamReader BufferedReader))
   (:require [clj-time.core :as ctime]
             [clj-time.format :as ctimeformat]

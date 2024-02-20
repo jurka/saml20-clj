@@ -1,8 +1,8 @@
-(ns saml20-clj.sp-test
+(ns old-saml20-clj.sp-test
   (:require [clojure.test :refer :all]
             [clj-time.core :as ctime]
-            [saml20-clj.sp :refer :all]
-            [saml20-clj.xml :refer :all])
+            [old-saml20-clj.sp :refer :all]
+            [old-saml20-clj.xml :refer :all])
   (:import  [org.xml.sax SAXParseException]))
 
 (deftest test-saml-next-id

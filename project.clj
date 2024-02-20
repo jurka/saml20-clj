@@ -1,6 +1,6 @@
-(defproject kirasystems/saml20-clj "0.1.17-SNAPSHOT"
+(defproject jurka/old-saml20-clj "0.1.17-SNAPSHOT"
   :description "Basic SAML 2.0 library for SSO."
-  :url "https://github.com/kirasystems/saml20-clj"
+  :url "https://github.com/jurka/saml20-clj"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src"]

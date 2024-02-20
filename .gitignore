@@ -13,3 +13,4 @@ config.edn
 .lein-plugins
 .lein-repl-history
 .nrepl-port
+.idea/
